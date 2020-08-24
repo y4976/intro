@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&amp;display=swap" rel="stylesheet">
+    <link href="assets/danielduran/portfolio/dist/css/black-white.css" rel="stylesheet">
+    <link href="assets/danielduran/portfolio/dist/css/preview.css" rel="stylesheet">
+    <title>최승훈</title>
+</head>
+<body class="with-header position-relative" data-spy="scroll" data-target="#sections-nav" data-offset="80">
+
+<div id="app">
+
+</div>
+
+<script src="assets/danielduran/portfolio/dist/js/all.js"></script>
+<script src="./dist/main.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('.preview-theme').click(function () {
+            $('link')[1].href = $(this).data('theme');
+            var imgSrcData = $(this).data('theme-bg') === 'light' ? 'dark-src' : 'light-src';
+            $('img[data-' + imgSrcData + ']').each(function () {
+                $(this).attr('src', $(this).data(imgSrcData));
+            });
+
+            return false;
+        });
+    });
+
+    // Bootstrap form validation example
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+</body>
+
+</html>

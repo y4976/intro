@@ -1,0 +1,10 @@
+vendor/
+.idea/
+storage/logs/*.log
+.env
+com/
+public/node_modules/
+public/dist/
+public/assets/img/uploads
+public/assets/danielduran
+*.DS_Store
