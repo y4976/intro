@@ -6,7 +6,7 @@
 
         <div id="appInfo">
             <b-button v-if="isDevelopMode" variant="outline-info" v-b-modal.log-modal>Communication Log</b-button>
-            version: {{version}}
+<!--            version: {{version}}-->
             <log-modal ref="logModal"/>
         </div>
     </div>
