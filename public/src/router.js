@@ -10,9 +10,9 @@ import FactList from "@/views/FactList";
 import ExperienceList from "@/views/ExperienceList";
 import References from "@/views/References";
 import ProjectList from "@/views/ProjectList";
-import Testimonials from "@/views/Testimonials";
 import Contact from "@/views/Contact";
 import Project from "@/views/Project";
+import Statistics from "@/views/Statistics";
 
 const routes = [
     { path: '', component: Home },
@@ -23,7 +23,7 @@ const routes = [
     { path: '/references', component: References },
     { path: '/projects', component: ProjectList },
     { path: '/projects/:id', component: Project },
-    { path: '/testimonials', component: Testimonials },
+    { path: '/statistics', component: Statistics },
     { path: '/contact', component: Contact },
 ];
 

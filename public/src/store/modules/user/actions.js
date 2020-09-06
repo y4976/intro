@@ -10,7 +10,7 @@ export const SET_ITEM = 'SET_ITEM';
 export default {
     [LOAD_USER] ({ commit, state }) {
         commit(mutations.SET_IS_LOADING, true);
-        communicator.sendRequest('GetUser', [state.views],
+        communicator.sendRequest('Initialize', [state.views],
             function(response) {
                 commit(mutations.SET_ITEM, response.value);
                 commit(mutations.SET_IS_LOADING, false);

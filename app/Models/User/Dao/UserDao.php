@@ -8,6 +8,7 @@
 
 namespace App\Models\User\Dao;
 
+use Phalcon\Db;
 use ShCommon\Base\BaseDao;
 
 class UserDao extends BaseDao
@@ -17,7 +18,8 @@ class UserDao extends BaseDao
         return $this->db->fetchOne(
             "
                 SELECT * FROM `user`
-            "
+            ",
+            Db::FETCH_OBJ,
         );
     }
 }

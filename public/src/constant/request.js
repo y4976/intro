@@ -2,7 +2,7 @@ const REQUEST_LIST = {
     CheckSession : '{"service":"CheckSession"}',
     LoadCommonData : '{"service":"LoadCommonData","value":{}}',
 
-    GetUser: '{"service":"GetUser"}',
+    Initialize: '{"service":"Initialize"}',
     AddMessage: '{"service":"AddMessage","value":{"item":{item}}}',
 
     AddItem: '{"service":"Add{itemName}","value":{"item":{item}}}',

@@ -44,7 +44,7 @@
             <div class="pl-2" v-html="item.role"></div>
             <h5 class="font-weight-bold m-0 mb-1 mt-1">③ 세부 내용</h5>
             <div class="pl-2" v-html="item.detail"></div>
-            <h5 v-if="item.relation" class="font-weight-bold">④ 프로젝트</h5>
+            <h5 v-if="item.relation" class="font-weight-bold m-0 mb-1 mt-1">④ 프로젝트</h5>
             <div v-if="item.relation" class="pl-2" v-html="item.relation"></div>
 
             <h5 v-if="item.description" class="font-weight-bold m-0 mb-1 mt-5 pt-5">소개</h5>

@@ -39,6 +39,7 @@
                     // {title: 'References', path: '/references'},
                     {title: 'Projects', path: '/projects'},
                     // {title: 'Testimonials', path: '/testimonials'},
+                    {title: 'Statistics', path: '/statistics'},
                     {title: 'Contact', path: '/contact'},
                 ]
             }

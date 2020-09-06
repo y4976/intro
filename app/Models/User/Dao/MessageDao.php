@@ -20,4 +20,18 @@ class MessageDao extends BaseDao
             ['name','email','message']
         );
     }
+
+    /**
+     * @return int
+     */
+    public function getTotalMessageCount()
+    {
+        return $this->db->fetchColumn(
+            "
+                SELECT COUNT(*)
+                FROM message 
+            "
+        );
+    }
+
 }
