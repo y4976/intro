@@ -3,7 +3,7 @@ const REQUEST_LIST = {
     LoadCommonData : '{"service":"LoadCommonData","value":{}}',
 
     GetUser: '{"service":"GetUser"}',
-    SendMail: '{"service":"SendMail","value":{"mailInfo":{mailInfo}}}',
+    AddMessage: '{"service":"AddMessage","value":{"item":{item}}}',
 
     AddItem: '{"service":"Add{itemName}","value":{"item":{item}}}',
     SetItem: '{"service":"Set{itemName}","value":{"item":{item}}}',

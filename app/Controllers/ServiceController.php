@@ -13,7 +13,7 @@ class ServiceController extends BaseServiceController
     ];
 
     protected $propertyList = [
-        'int' => ['id', 'totalProjectCount'],
+        'int' => ['id', 'totalProjectCount', 'imageCount'],
         'boolean' => [],
         'float' => [],
         'intArray' => [],

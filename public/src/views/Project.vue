@@ -22,13 +22,14 @@
             <h4 class="card-subtitle">{{item.subtitle}}</h4>
             <span v-if="item.link"> 링크 : <a v-if="item.link" href="item.link">{{item.link}}</a></span>
             <b-carousel
+                    v-if="item.imageCount > 0"
                     fade
                     indicators
                     img-width="512"
                     img-height="240"
             >
                 <b-carousel-slide
-                        v-for="index in (1,2,3,4)"
+                        v-for="index in item.imageCount"
                         v-bind:key="index"
                         :img-src="'assets/img/projects/' + item.id + '/' + index"
                 ></b-carousel-slide>
@@ -46,9 +47,8 @@
             <h5 v-if="item.relation" class="font-weight-bold">④ 프로젝트</h5>
             <div v-if="item.relation" class="pl-2" v-html="item.relation"></div>
 
-
-            <h5 class="font-weight-bold m-0 mb-1 mt-5 pt-5">소개</h5>
-            <div v-html="item.description"></div>
+            <h5 v-if="item.description" class="font-weight-bold m-0 mb-1 mt-5 pt-5">소개</h5>
+            <div v-if="item.description" v-html="item.description"></div>
         </div>
     </div>
 </template>

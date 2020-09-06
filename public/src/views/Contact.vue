@@ -24,21 +24,21 @@
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label for="contact-form-name">Name</label>
-                                <input type="text" class="form-control" id="contact-form-name" placeholder="Your name" required="" v-model="mailInfo.name">
+                                <input type="text" class="form-control" id="contact-form-name" placeholder="Your name" required="" v-model="item.name">
                                 <div class="invalid-feedback">Please enter your name.</div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label for="contact-form-name">E-mail</label>
-                                <input type="email" class="form-control" name="email" id="contact-form-email" placeholder="@" required="" v-model="mailInfo.mailFrom">
+                                <input type="email" class="form-control" name="email" id="contact-form-email" placeholder="@" required="" v-model="item.email">
                                 <div class="invalid-feedback">Please enter a valid e-mail address.</div>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="contact-form-message">Message</label>
-                        <textarea class="form-control" id="contact-form-message" placeholder="Your message" rows="5" required="" v-model="mailInfo.content"></textarea>
+                        <textarea class="form-control" id="contact-form-message" placeholder="Your message" rows="5" required="" v-model="item.message"></textarea>
                         <div class="invalid-feedback">Please type some message.</div>
                     </div>
                     <button @click="sendMail" class="btn btn-primary">Send</button>
@@ -58,16 +58,16 @@
         mixins: [User],
         data() {
             return {
-                mailInfo: {
+                item: {
                     name: '',
-                    mailFrom: '',
-                    content: '',
+                    email: '',
+                    message: '',
                 }
             }
         },
         methods: {
             sendMail() {
-                communicator.sendActionRequest('SendMail', [{mailInfo: this.mailInfo}], () => {});
+                communicator.sendActionRequest('AddMessage', [{item: this.item}], () => {});
             }
         }
     }
