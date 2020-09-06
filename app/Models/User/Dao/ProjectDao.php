@@ -22,6 +22,16 @@ class ProjectDao extends BaseDao
         );
     }
 
+    public function getProjectCount()
+    {
+        return $this->db->fetchOne(
+            "
+                SELECT COUNT(*) AS `count` FROM project
+            ",
+            Db::FETCH_OBJ,
+        );
+    }
+
     public function getProject($id)
     {
         return $this->db->fetchOne(

@@ -28,7 +28,11 @@ class GetProject extends BaseService
     {
         $project = $this->projectDao->getProject($requestValue->id);
         $project->skillList = $this->projectDao->getProjectSkillList($requestValue->id);
+        $project->relation = str_replace("\r\n", "<br>", $project->relation);
+        $project->role = str_replace("\r\n", "<br>", $project->role);
+        $project->detail = str_replace("\r\n", "<br>", $project->detail);
         $project->description = str_replace("\r\n", "<br>", $project->description);
+        $project->totalProjectCount = $this->projectDao->getProjectCount()->count;
 
         $this->responseValue->item = $project;
     }

@@ -57,7 +57,6 @@
 
             loadCallback(item) {
                 this.item = $.extend(true, {}, item);
-                console.log(item);
             },
 
             addCallback() {

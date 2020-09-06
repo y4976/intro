@@ -9,7 +9,7 @@
                 <div class="timeline-text row m-0 pt-2">
                     <div v-for="(project, index) in item.projectList" class="pr-2">
                         <router-link :to="'/projects/'+project.id">
-                            <h5><b-badge class="project-link">{{project.title}}</b-badge></h5>
+                            <h5><b-badge variant="primary">{{project.title}}</b-badge></h5>
                         </router-link>
                     </div>
                 </div>
@@ -28,7 +28,5 @@
 </script>
 
 <style scoped>
-    .project-link {
-        background-color: #0062cc !important;
-    }
+
 </style>
