@@ -35,6 +35,7 @@
         <div class="animation-translate animation-item-2">
             <div class="pt-5">{{item.subtitle}}</div>
             <span v-if="item.link"> 링크 : <a v-if="item.link" href="item.link">{{item.link}}</a></span>
+            <br>
             <b-carousel
                     v-if="item.imageCount > 0"
                     fade
@@ -61,6 +62,7 @@
             <span v-if="item.relation" class="project-subtitle m-0 mb-1 mt-1">④ 프로젝트</span>
             <div v-if="item.relation" class="pl-2" v-html="item.relation"></div>
 
+            <br><br>
             <span v-if="item.description" class="project-subtitle m-0 mb-1 mt-5 pt-5">소개</span>
             <div v-if="item.description" v-html="item.description"></div>
         </div>
