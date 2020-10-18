@@ -4,7 +4,7 @@
             <h2 class="section-title animation-translate-overline animation-item-1">About me</h2>
             <article class="article animation-translate animation-item-2">
                 <div v-for="item in itemList" style="padding-top: 5rem">
-                    <div>{{item.title}}</div>
+                    <div v-html="item.title"></div>
                     <div v-html="item.description" class="pt-3 small-text"></div>
                 </div>
             </article>

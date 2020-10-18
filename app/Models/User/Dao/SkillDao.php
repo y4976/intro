@@ -8,6 +8,7 @@
 
 namespace App\Models\User\Dao;
 
+use Phalcon\Db;
 use ShCommon\Base\BaseDao;
 
 class SkillDao extends BaseDao
@@ -17,7 +18,9 @@ class SkillDao extends BaseDao
         return $this->db->fetchAll(
             "
                 SELECT * FROM skill
-            "
+            ",
+            Db::FETCH_OBJ,
+
         );
     }
 }

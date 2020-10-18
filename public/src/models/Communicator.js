@@ -70,12 +70,15 @@ class Communicator {
                 communicationLogger.addLog('Response', response.data);
                 callback(response.data);
             }).catch(ex => {
-                if (axios.defaults.timeout > 10000) {
-                    callback({result: 408, resultMessage: 'Time out, please click refresh'});
-                } else {
-                    axios.defaults.timeout += 5000;
-                    this.sendRequest(requestName, inputValueList, callback);
-                }
+                console.log('a' + ex);
+                // if (ex != null) {
+                //     if (axios.defaults.timeout > 10000) {
+                //         callback({result: 408, resultMessage: 'Time out, please click refresh'});
+                //     } else {
+                //         axios.defaults.timeout += 5000;
+                //         this.sendRequest(requestName, inputValueList, callback);
+                //     }
+                // }
             })
         }
     }

@@ -36,7 +36,28 @@
             <div class="pt-5">{{item.subtitle}}</div>
             <span v-if="item.link"> 링크 : <a v-if="item.link" href="item.link">{{item.link}}</a></span>
             <br>
+            <span class="project-subtitle m-0 mb-1 mt-1">① 수행환경</span>
+            <div class="pl-2">
+                <ul>
+                    <li>개발도구 : <span class="pr-1" v-for="(skill, index) in item.skillList"><b-badge variant="primary">{{skill.skill}}</b-badge></span></li>
+                    <li>개발환경 : {{item.environment}}</li>
+                    <li>수행인원 : {{item.attendantCount}}명</li>
+                </ul>
+            </div>
+            <div class="pl-2 pt-3">
+                <span class="project-subtitle m-0 mb-1 mt-1">② 세부 내용</span>
+
+                <ul>
+                    <li v-for="description in item.descriptionList">{{description.description}}</li>
+                </ul>
+            </div>
+
+            <br><br>
+            <span v-if="item.description" class="project-subtitle m-0 mb-1 mt-5 pt-5">소개</span>
+            <div v-if="item.description" v-html="item.description"></div>
+
             <b-carousel
+                    class="pt-4"
                     v-if="item.imageCount > 0"
                     fade
                     indicators
@@ -49,22 +70,6 @@
                         :img-src="'assets/img/projects/' + item.id + '/' + index"
                 ></b-carousel-slide>
             </b-carousel>
-            <span class="project-subtitle m-0 mb-1 mt-1">① 수행환경</span>
-            <div class="pl-2">
-                - 개발도구 : <span class="pr-1" v-for="(skill, index) in item.skillList"><b-badge variant="primary">{{skill.skill}}</b-badge></span><br>
-                - 개발환경 : {{item.environment}}<br>
-                - 수행인원 : {{item.attendantCount}}명<br>
-            </div>
-            <span class="project-subtitle m-0 mb-1 mt-1">② 주요역할</span>
-            <div class="pl-2" v-html="item.role"></div>
-            <span class="project-subtitle m-0 mb-1 mt-1">③ 세부 내용</span>
-            <div class="pl-2" v-html="item.detail"></div>
-            <span v-if="item.relation" class="project-subtitle m-0 mb-1 mt-1">④ 프로젝트</span>
-            <div v-if="item.relation" class="pl-2" v-html="item.relation"></div>
-
-            <br><br>
-            <span v-if="item.description" class="project-subtitle m-0 mb-1 mt-5 pt-5">소개</span>
-            <div v-if="item.description" v-html="item.description"></div>
         </div>
     </div>
 </template>

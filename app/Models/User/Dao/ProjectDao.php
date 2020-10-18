@@ -17,8 +17,9 @@ class ProjectDao extends BaseDao
     {
         return $this->db->fetchAll(
             "
-                SELECT * FROM project
-            "
+                SELECT * FROM project ORDER BY id DESC
+            ",
+            Db::FETCH_OBJ,
         );
     }
 
@@ -57,4 +58,18 @@ class ProjectDao extends BaseDao
             ]
         );
     }
+
+    public function getProjectDescriptionList($id)
+    {
+        return $this->db->fetchAll(
+            "
+                SELECT description FROM project_description WHERE projectId = :id
+            ",
+            Db::FETCH_OBJ,
+            [
+                'id' => $id,
+            ]
+        );
+    }
+
 }

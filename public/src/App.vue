@@ -51,7 +51,12 @@
 </script>
 
 <style>
-
+    .divider {
+        height: 1px;
+        background-color: black;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
 </style>
 
 <style scoped>

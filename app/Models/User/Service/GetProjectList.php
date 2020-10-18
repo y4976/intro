@@ -26,6 +26,12 @@ class GetProjectList extends BaseService
 
     protected function process($requestValue)
     {
-        $this->responseValue->itemList = $this->projectDao->getProjectList();
+        $itemList = $this->projectDao->getProjectList();
+        foreach ($itemList as &$item) {
+            $item->descriptionList = $this->projectDao->getProjectDescriptionList($item->id);
+            $item->skillList = $this->projectDao->getProjectSkillList($item->id);
+        }
+
+        $this->responseValue->itemList = $itemList;
     }
 }

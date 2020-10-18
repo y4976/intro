@@ -28,7 +28,7 @@ class GetAboutMeList extends BaseService
     {
         $this->responseValue->itemList = $this->descriptionDao->getDescriptionList(1);
         foreach ($this->responseValue->itemList as &$item) {
-            $item->description = str_replace('\r\n', '<br>', $item->description);
+            $item->description = str_replace("\r\n", "<br>", $item->description);
             $item->description = "<small>{$item->description}</small>";
         }
     }

@@ -14,7 +14,8 @@
             <li class="sections-nav-item">
                 <div class="sections-nav-info">
                     <a :href="'mailto:'+user.email">{{user.email}}</a><br>
-                    <a :href="'tel:'+user.phone">{{user.phone}}</a>
+                    <a :href="'tel:'+user.phone">{{user.phone}}</a><br>
+                    <a :href="user.gitHub" target="_blank">{{user.gitHub}}</a>
                 </div>
             </li>
         </ul>

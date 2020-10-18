@@ -33,6 +33,7 @@ class GetProject extends BaseService
         $project->detail = str_replace("\r\n", "<br>", $project->detail);
         $project->description = str_replace("\r\n", "<br>", $project->description);
         $project->totalProjectCount = $this->projectDao->getProjectCount()->count;
+        $project->descriptionList = $this->projectDao->getProjectDescriptionList($requestValue->id);
 
         $this->responseValue->item = $project;
     }
